@@ -27,7 +27,7 @@ void process_image_callback(const sensor_msgs::Image img)
     
     int height{0};
     bool white_ball_detected{false};		
-    int pixel_count {-1};
+    int pixel_count {};
     int step = img.step;	
 
     int lower_limit_left   {0};
@@ -38,14 +38,9 @@ void process_image_callback(const sensor_msgs::Image img)
     int upper_limit_middle {(step/2)-1};
     int upper_limit_right  {step-1};
    
-    for (int i{}; i < img.data.size();++i){
-	pixel_count++;
-	if (pixel_count == step){
-		pixel_count = 0;
-		height++;
-	}
+    for (int i{}; i < img.data.size();i+=3){ //Check 3 consecutive pixels in each iteration
 
-    	if (img.data[i] == 255){
+    	if (img.data[i] == 255 && img.data[i+1] == 255 && img.data[i+2] == 255){
 
 	    white_ball_detected = true;	
 
@@ -67,6 +62,13 @@ void process_image_callback(const sensor_msgs::Image img)
 
        }
        white_ball_detected = false;
+
+       pixel_count+=3; 	//Increase pixel count by 3 since each iteration checks 3 consecutive pixels
+
+       if (pixel_count == step){
+	   pixel_count = 0;
+	   height++;
+	}
 	
     }	
 
