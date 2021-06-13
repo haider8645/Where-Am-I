@@ -10,3 +10,8 @@ Usage:
 4) run the launch files from the my_robot and ball_chaser packages
 5) Insert a white ball in the loaded Gazebo simulation
 6) The robot will follow the white ball in its FOV.
+
+
+Known Issues:
+
+The process_image node loops over each pixel of the 800 x 800 input image. This makes the simulation very slow. A better approach using OpenCV will be implemented as the next version. The current version is submitted as it is because it was not a requirement in the nanodegree project to use OpenCV. 
