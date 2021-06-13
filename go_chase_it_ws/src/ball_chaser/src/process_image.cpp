@@ -45,7 +45,7 @@ void process_image_callback(const sensor_msgs::Image img)
     int upper_limit_middle {(step/2)-1};
     int upper_limit_right  {step-1};
    
-    for (int i{}; i < img.data.size();i+=3){
+    for (int i{}; i < img.data.size();++i){
 	pixel_count++;
 	if (pixel_count == step){
 		pixel_count = 0;
