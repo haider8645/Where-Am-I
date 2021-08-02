@@ -12,8 +12,10 @@ Usage:
 
 4) run the launch files from the my_robot and where_am_i packages
 
-	roslaunch my_robot world.launch	
-	roslaunch where_am_i amcl.launch 
+	**roslaunch my_robot world.launch**
+	
+	**roslaunch where_am_i amcl.launch**
+ 
 
 5) Set a navigation goal in RViZ
 
