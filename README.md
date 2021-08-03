@@ -21,3 +21,9 @@ Usage:
 
 6) The robot will use the amcl_pose to localize itself in order to reach the desired goal pose
 
+
+**Screenshots**
+
+![Robot Localization - 2](https://user-images.githubusercontent.com/23505408/128063050-13e5f6ab-3d5e-4ce2-b3ff-e00a9467d84d.png)
+
+![Robot Localization - 1](https://user-images.githubusercontent.com/23505408/128063061-b5a156bc-bf58-469a-807a-dcf3f8dc3cfd.png)
